@@ -1,0 +1,64 @@
+.yen{
+    border: 2px solid black;
+    background-color: dodgerblue;
+    max-height: 500px;
+    max-width: 1200px;
+    padding: 5px;
+    margin: 50px auto;
+    display: flex;
+
+}
+.hai{
+   width: 400px;
+   height: 400px;
+   /* Khoang cach giua cac cot la 15px */ margin-right: 15px;
+}
+.nhan{
+    background-color: firebrick;
+}
+.thuy{
+    background-color: floralwhite;
+}
+.duy{
+    background-color: gold;
+}
+.t{
+    border: black solid 2px;
+    background-color: darkcyan;
+    max-width: 1000px;
+    max-height: 1000px;
+    margin: 50px auto;
+    padding: 5px;
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+
+   
+    
+    
+}
+.le{
+    background-color: darkgoldenrod;
+    color: darkgrey;
+    text-align: center;
+    height: 400px;
+    /* Khoảng cách 15px */ margin-right: 15px;
+}
+.quang{
+    height: 200px; 
+}
+.tung{
+    background-color: darkred;
+}
+.manh{
+    background-color: darkslategray;
+}
+.thi{
+    width: 500px;
+}
+.cao{
+    width: 300px;
+}
+.q{
+    background-color: honeydew;
+}
