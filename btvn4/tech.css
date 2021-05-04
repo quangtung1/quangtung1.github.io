@@ -82,6 +82,8 @@ margin: 0 20px;
 .left{
     width: 32%;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
    
 }
 .box{
@@ -89,8 +91,7 @@ margin: 0 20px;
     border-radius: 4px;
     background-color: #fff;
     height: 20,5%;
-    display: flex;
-    margin: 10px 15px;
+   
 
 }
 .box img{
@@ -99,7 +100,6 @@ margin: 0 20px;
     float: left;
 }
 .content{
-    float: left;
     height: 100%;
     padding: 10px;
     display: flex;
