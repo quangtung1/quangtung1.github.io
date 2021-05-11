@@ -1,0 +1,33 @@
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+img{
+    width: 200px;
+    height: 200px;
+    vertical-align: middle;
+    object-fit: cover;
+    border: solid 1px;
+}
+.t{
+    text-align: center;
+    box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.15);
+}
+.main{
+    width: 700px;
+    height: 700px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+img:hover{
+    transform: scale(1.2);
+}
+.title:hover{
+    transform: scale(1.1);
+}
+a{
+    text-decoration: none;
+}
