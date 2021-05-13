@@ -163,6 +163,9 @@ ul{
     flex-wrap: wrap;
     margin: 30px;
 }
+.col img:hover{
+    opacity: 0.5;
+}
 .gv{
     margin-top: 10px;
     width: 100%;
