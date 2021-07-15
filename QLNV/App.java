@@ -25,9 +25,7 @@ for (Laptrinhvien laptrinhvien : list) {
     }
     System.out.println(laptrinhvien);
 }
-for (Laptrinhvien laptrinhvien : list) {
-    laptrinhvien.tinhluong();
-}
+
 List<Kiemchungvien> list1=new ArrayList<Kiemchungvien>();
 list1.add(kcv1);
 list1.add(kcv2);

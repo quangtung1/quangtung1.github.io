@@ -4,7 +4,7 @@ public class Laptrinhvien {
     @Override
     public String toString() {
         return "Laptrinhvien [email=" + email + ", giolamthem=" + giolamthem + ", hoten=" + hoten + ", luong=" + luong
-                + ", manv=" + manv + ", sdt=" + sdt + ", tuoi=" + tuoi + "]";
+                + ", manv=" + manv + ", sdt=" + sdt + ", tuoi=" + tuoi + "]" +" Tổng Lương: "+ tinhluong();
     }
     public long getManv() {
         return manv;
@@ -64,8 +64,8 @@ public class Laptrinhvien {
     String email;
     long luong;
     int giolamthem;
-    public void tinhluong(){
+    public long tinhluong(){
         long tongluong=getLuong()+getGiolamthem()*200000;
-        System.out.println("Lương của nhân viên "+getManv() +" là: "+tongluong);
+        return tongluong;
     }
 }

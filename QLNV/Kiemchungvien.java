@@ -4,7 +4,7 @@ public class Kiemchungvien {
     @Override
     public String toString() {
         return "Kiemchungvien [email=" + email + ", hoten=" + hoten + ", luong=" + luong + ", manv=" + manv + ", sdt="
-                + sdt + ", soloiph=" + soloiph + ", tuoi=" + tuoi + "]";
+                + sdt + ", soloiph=" + soloiph + ", tuoi=" + tuoi + "] "+" Tổng Lương: "+ tinhluong();
     }
     public long getManv() {
         return manv;
@@ -64,9 +64,9 @@ public class Kiemchungvien {
     String email;
     long luong;
     int soloiph;
-    public void tongluong(){
+    public long tinhluong(){
         long tongluong=getLuong()+getSoloiph()*50000;
-        System.out.println("Tổng lương của kiểm soát viên "+getManv() +" là: "+tongluong);
+        return tongluong;
     }
 
 }
