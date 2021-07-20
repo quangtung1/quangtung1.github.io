@@ -102,7 +102,7 @@ public class Bai2 {
             System.out.println("Mời bạn nhập tên khách hàng:");
             String ten=sc.nextLine();
             System.out.println("Mời bạn nhập ngày sinh:");
-            LocalDate ngaysinh = LocalDate.now();
+            LocalDate ngaysinh = LocalDate.of(sc.nextInt(), sc.nextInt(), sc.nextInt());sc.nextLine();
             System.out.println("Mời bạn nhập quê quán");
             String quequan =sc.nextLine();
             System.out.println("Mời bạn nhập số điện thoại:");
@@ -124,6 +124,9 @@ public class Bai2 {
         list.add(z);  
         }
         
+    }
+    public void edit (){
+
     }
     public void delete(){
         Scanner sc=new Scanner(System.in);
