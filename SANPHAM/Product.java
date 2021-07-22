@@ -139,7 +139,7 @@ public class Product {
             System.out.println(entry.getKey()+" Số lượng bán được: " + entry.getValue());
         }
     }
-    public void ProductByType(){
+  /*  public void ProductByType(){
         Map<String,Integer> product = new HashMap<String,Integer>();
         for (Product p : products) {
             product.put(p.getType(),p.getAmount());
@@ -148,12 +148,37 @@ public class Product {
             System.out.println(entry.getKey() + " Số lượng sản phẩm: " + entry.getValue());
     
 }
-    }
+    }*/
+    
+    public void ProductByType(){
+        Map<String,Integer> product = new HashMap<String,Integer>();
+        
+        for (Product p : products) {
+            product.put(p.getType(),0);}
+        
+            for (Product p : products) {
+                
+                int n=product.get(p.getType());
+               
+                
+                if (product.containsKey(p.getType())) {
+                    product.put(p.getType(),n+p.getAmount());
+                }
+    
+            } 
+        for (Map.Entry<String, Integer> entry : product.entrySet()) {
+            System.out.println(entry.getKey() + " Số lượng sản phẩm: " + entry.getValue());
+    }}
     public void menu(){
-     products.add(new Product(01,"Bim Bim","Thức ăn",10,5000,5));
-    products.add(new Product(02,"Xong nồi","Đồ gia dụng",20,15000,12));
-    products.add(new Product(03,"Áo Phông","Thời trang",14,200000,6));
-    products.add(new Product(04,"Son môi","Mĩ phẩm",21,175000,11));
+     products.add(new Product(1,"Bim Bim","Thức ăn",10,5000,5));
+    products.add(new Product(2,"Xong nồi","Đồ gia dụng",20,15000,12));
+    products.add(new Product(7,"Bát đũa","Đồ gia dụng",60,15000,12));
+    products.add(new Product(3,"Áo Phông","Thời trang",14,200000,6));
+    products.add(new Product(4,"Son môi","Mĩ phẩm",21,175000,11));
+    products.add(new Product(5,"Quần Jean","Thời trang",6,175000,3));
+    products.add(new Product(6,"Sơ mi","Thời trang",7,175000,11));
+    products.add(new Product(8,"Short","Thời trang",7,175000,11));
+    products.add(new Product(9,"Dép","Thời trang",7,175000,11));
         System.out.println("1. Xem thông tin các sản phẩm hiện có.");
         System.out.println("2. Thêm sản phẩm mới.");
         System.out.println("3. Sửa thông tin sản phẩm theo mã sản phẩm.");
@@ -172,7 +197,7 @@ public class Product {
                 case 3: edit();break;
                 case 4:delete();break;
                 case 5: showSellNumber( );break;
-                case 6: ProductByType( );break;
+                case 6:ProductByType();break;
                 case 7: products.sort(new Comparator<Product>() {
 
                     @Override
