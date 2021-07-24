@@ -14,10 +14,10 @@ public class App {
         users.add(user1);
         users.add(user2);
         users.add(user3);
-     //   Constroller con =new Constroller();
-      /*  con.changePassword(users);
+      /* Constroller con =new Constroller();
+       con.changePassword(users);
         users.stream().forEachOrdered(u->System.out.println(u));*/
-        Menu.mainMenu();
+       Menu.mainMenu();
         
 
         

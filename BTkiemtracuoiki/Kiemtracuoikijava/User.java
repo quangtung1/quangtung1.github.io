@@ -45,7 +45,7 @@ public User(){}
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.email = Validate.validateEmail(email);;
     }
 
     public String getPassword() {
@@ -53,7 +53,7 @@ public User(){}
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = Validate.validatePassword(password);
     }
 
    
