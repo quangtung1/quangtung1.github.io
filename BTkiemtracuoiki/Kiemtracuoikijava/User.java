@@ -1,10 +1,21 @@
 package Kiemtracuoikijava;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 public class User {
+    @Override
+    public String toString() {
+        return "User [email=" + email + ", id=" + id + ", password=" + password + ", username=" + username + "]";
+    }
+
     long id;
      String username;
      String email;
      String password;
+    
+
 public User(){}
     public User(long id, String username, String email, String password) {
         this.id = id;
@@ -34,7 +45,7 @@ public User(){}
     }
 
     public void setEmail(String email) {
-        this.email = Validate.validateEmail(email);
+        this.email = email;
     }
 
     public String getPassword() {
@@ -42,13 +53,9 @@ public User(){}
     }
 
     public void setPassword(String password) {
-        this.password = Validate.validatePassword(password);
+        this.password = password;
     }
 
-    @Override
-    public String toString() {
-        // TODO Auto-generated method stub
-        return id + " - " + username + " - "  + email + " - " + password;
-    }
-
+   
+   
 }
