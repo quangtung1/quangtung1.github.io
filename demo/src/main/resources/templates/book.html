@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Page</title>
+    <title>Book</title>
 </head>
 <body>
-    <h1>About Page</h1>
-    <p>Đây là trang web của <span th:text="${name}"></span></p>
+    <h1>Danh sách những quyển sách hay nhất trong năm qua</h1>
+    <ul>
+        <li th:each="book: ${books}" th:text="|title: ${book.title}, author: ${book.author}|"></li>
+    </ul>
 </body>
 </html>
