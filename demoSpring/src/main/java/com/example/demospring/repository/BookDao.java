@@ -12,6 +12,8 @@ public class BookDao extends Dao<Book> {
     public BookDao() {
         collections.add(new Book(1, "Không gia đình", "Chú bé Remy lang thang theo gánh xiếc của bác Vitaly"));
         collections.add(new Book(2, "Cuốn theo chiều gió", "Nội chiến Hoa kỳ, cuộc tình giữa Red Butler và Ohara"));
+        collections.add(new Book(3, "Conan", "Trinh thám, phiêu lưu thám hiểm"));
+
     }
 
     @Override

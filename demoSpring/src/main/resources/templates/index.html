@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+<head th:replace="template.html :: header('book')">
 </head>
 <body>
-<h1> Hello Spring Boot</h1>
+<header th:insert="template.html :: topmenu"> </header>
+<div class="container">
+    <p>
+        Books
+    </p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="book, iState :${books}">
+            <th scope="row" th:text="${iState.index} +1"></th>
+            <td th:text="${book.id}"></td>
+            <td th:text="${book.title}"></td>
+            <td th:text="${book.description}"></td>
+        </tr>
 
+        </tbody>
+    </table>
+</div>
+<header th:replace="template.html :: footer"> </header>
 </body>
 </html>

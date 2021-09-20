@@ -5,6 +5,7 @@ import com.example.demospring.repository.BookDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -12,9 +13,10 @@ import org.springframework.web.bind.annotation.*;
 public class HomeController {
     @Autowired
     private BookDao bookDao;
-    @GetMapping("/show")
-    public ResponseEntity getAll(){
-        return ResponseEntity.ok(bookDao.getAll());
+    @GetMapping("/books")
+    public String getAll(Model model){
+        model.addAttribute("books",bookDao.getAll());
+        return "index";
     }
     @GetMapping("/show/{id}")
     public ResponseEntity getbyID(@PathVariable int id){
