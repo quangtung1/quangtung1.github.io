@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car</title>
+</head>
+<body>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Model</th>
+        <th scope="col">Manufacturer</th>
+        <th scope="col">Price</th>
+        <th scope="col">Sale</th>
+        <th scope="col">Image</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="car, iStat:${listcar}">
+        <th th:text = ${iStat.count}>No.</th>
+        <th th:text = *{car.manufactory}>Manufacturer</th>
+        <th th:text=*{car.model}>Model</th>
+        <th th:text=*{car.price}>Price</th>
+        <th th:text=*{car.sale}>Sale</th>
+        <th th:text=*{car.img}>Image</th>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
