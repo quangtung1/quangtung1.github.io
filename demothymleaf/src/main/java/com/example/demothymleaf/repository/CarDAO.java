@@ -1,5 +1,7 @@
 package com.example.demothymleaf.repository;
 
+import com.example.demothymleaf.exception.InternalSeverEx;
+import com.example.demothymleaf.exception.NotFoundException;
 import com.example.demothymleaf.model.Car;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
@@ -26,6 +28,7 @@ public class CarDAO implements DAO<Car> {
 
     @Override
     public List<Car> create(Car car) {
+
         Car c = new Car();
         c.setId(car.getId());
         c.setManufactory(car.getManufactory());
@@ -39,6 +42,7 @@ public class CarDAO implements DAO<Car> {
 
     @Override
     public List<Car> update(Car car, int id) {
+
         for (Car c:list) {
             if (c.getId()==id){
                 c.setManufactory(car.getManufactory());
@@ -46,6 +50,8 @@ public class CarDAO implements DAO<Car> {
                 c.setModel(car.getModel());
                 c.setPrice(car.getPrice());
                 c.setSale(car.getSale());
+            }else {
+                throw new NotFoundException("Not found ID");
             }
         }
         return list;
@@ -59,7 +65,7 @@ public class CarDAO implements DAO<Car> {
                 list.remove(c);
                 check =true;
             }else{
-                System.out.println("Not found Id");
+               throw new NotFoundException("Not found ID");
             }
         }
         if (check ==true){
@@ -70,6 +76,15 @@ public class CarDAO implements DAO<Car> {
 
     @Override
     public List<Car> search(String model, String manufacturer) {
+        for (Car car:list) {
+            if (car.getManufactory().isEmpty()){
+                throw new InternalSeverEx("Not found data");
+            }
+            if (car.getModel().isEmpty()){
+                throw new InternalSeverEx("Not found data");
+            }
+        }
+
         return list.stream().filter(c->(c.getManufactory().equals(manufacturer)||c.getModel().equals(model) )).collect(Collectors.toList());
     }
 

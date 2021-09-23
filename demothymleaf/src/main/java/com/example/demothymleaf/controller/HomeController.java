@@ -7,10 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -34,21 +31,21 @@ public class HomeController {
 
         return "listcar";
     }
-    @GetMapping("update/{id}")
-    public String update(Model model, @PathVariable int id,Car cars){
-        model.addAttribute("car",carDAO.update(cars,id));
+    @PutMapping("update/{id}")
+    public ResponseEntity update(@PathVariable int id,@RequestBody Car cars){
 
-        return "listcar";
+
+        return ResponseEntity.ok(carDAO.update(cars,id));
     }
     @GetMapping("delete/{id}")
-    public String update(Model model, @PathVariable int id){
-        model.addAttribute("car",carDAO.delete(id));
-        return "listcar";
+    public ResponseEntity delete( @PathVariable int id){
+
+        return ResponseEntity.ok(carDAO.delete(id));
     }
     @GetMapping("/search")
-    public String search(Model model,String modell, String m){
-       model.addAttribute("car",carDAO.search(modell,m));
-       return "listcar";
+    public ResponseEntity search(@RequestParam String modell,@RequestParam String m){
+
+       return ResponseEntity.ok(carDAO.search(modell, m));
     }
     @GetMapping("/sort")
     public String sort(Model model){
