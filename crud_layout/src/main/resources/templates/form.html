@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Staff</title>
+</head>
+<body>
+  <div layout:fragment="content">
+    <section class="my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                  <form action="#" th:action="@{/staff/save}" th:object="${staff}" method="post"
+                    novalidate="novalidate">
+                <input type="hidden" placeholder="id" th:field="*{id}"/><br><br>
+                <input type="text" placeholder="firstName" th:field="*{firstName}"/><br><br>
+                <input type="text" placeholder="description" th:field="*{lastName}"/><br><br>
+                <input type="text" placeholder="description" th:field="*{emailId}"/><br><br>
+                <input type="text" placeholder="description" th:field="*{passportNumber}"/><br><br>
+                <button type="submit">Save</button>
+                  </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+  
+</body>
+</html>
